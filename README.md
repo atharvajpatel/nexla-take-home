@@ -53,12 +53,12 @@ Results will be saved in `deepeval_results.csv`, which can be analyzed using pan
 
 ## Technical Stack
 
-- **LLM Models**: 
-  - Groq (llama-3.3-70b)
+- **LLM Models I used**: 
   - Claude 3.5 Sonnet
   - O3-mini-high
 
 - **Frameworks & Libraries**:
+  - Groq (llama-3.3-70b)
   - Langchain/Langgraph
   - Deepeval
   - Pandas
