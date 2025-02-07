@@ -1,6 +1,0 @@
-1. Navigate to command line into root repository ("nexla-take-hom")
-2. Create a virtual environment (python -m venv VIRTUAL_ENV_NAME) --> I did python -m venv nexenv
-3. VIRTUAL_ENV_NAME\Scripts\activate ---> run this in the command line --> I did nexenv\Scripts\activate
-4. pip install -r requirements.txt ---> run this when in the venv
-5. Go to .ipynb and select kernel (on top right) as VIRTUAL_ENV_NAME ---> I did nexenv --> If it asks to install ipykernel, choose install
-6. Run notebook

@@ -1,0 +1,53 @@
+question,answer
+"Find total contributions by each contributor.","SELECT 
+    contribid,
+    contrib,
+    SUM(amount) as total_contributions
+FROM contributions
+GROUP BY contribid, contrib
+ORDER BY total_contributions DESC;"
+"List all contributions made in the year 2022.","SELECT 
+    contrib,
+    recipient,
+    amount,
+    date,
+    type,
+    party
+FROM contributions
+WHERE EXTRACT(YEAR FROM date) = 2022
+ORDER BY date;"
+"Find the top 5 recipients who received the highest total contributions.","SELECT 
+    recipid,
+    recipient,
+    party,
+    COUNT(DISTINCT contribid) as number_of_contributors,
+    SUM(amount) as total_contributions
+FROM contributions
+GROUP BY recipid, recipient, party
+ORDER BY total_contributions DESC
+LIMIT 5;"
+"Count the number of contributions made by contributors from the state of California (CA).","SELECT 
+    COUNT(*) as total_contributions,
+    COUNT(DISTINCT contribid) as unique_contributors,
+    SUM(amount) as total_amount
+FROM contributions
+WHERE State = 'CA'"
+"Find the average contribution amount.","SELECT 
+    ROUND(AVG(amount), 2) as average_contribution,
+    ROUND(MIN(amount), 2) as minimum_contribution,
+    ROUND(MAX(amount), 2) as maximum_contribution,
+    ROUND(STDDEV(amount), 2) as std_dev_contribution
+FROM contributions
+WHERE amount > 0;"
+"Tell me the maximum donation done by SBF.","SELECT 
+    contrib,
+    recipient,
+    MAX(amount) as largest_donation,
+    date,
+    type,
+    orgname
+FROM contributions
+WHERE contrib LIKE '%Bankman-Fried%' 
+    OR contrib LIKE '%SBF%'
+ORDER BY amount DESC
+LIMIT 1;"
