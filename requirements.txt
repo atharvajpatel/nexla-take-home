@@ -1,0 +1,14 @@
+numpy
+pandas
+langchain
+langgraph
+pydantic
+groq
+requests
+jsonschema
+python-dotenv
+tqdm
+scikit-learn
+matplotlib
+seaborn
+torch
